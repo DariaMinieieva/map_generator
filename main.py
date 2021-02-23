@@ -1,5 +1,5 @@
 '''
-This is something that I will write later
+This is module that generates a map with twitter friends
 '''
 
 from flask import Flask
