@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %}Map generator{% endblock %}</title>
+        <style>
+            body {
+                max-width: 1140px;
+                margin: 0 auto;
+                font-family: sans-serif;
+                background: url("static/geometric-leaves.png");
+                position: relative;
+                min-height: 100vh;
+            }
+            .field {
+                padding: 10px;
+                margin: 10px;
+                width: 70%;
+                border: 2px dashed gray;
+                border-radius: 7px;
+                font-family: sans-serif;
+            }
+
+            .field:focus {
+                outline: none;
+                background-color: lavender;
+            }
+
+            .button {
+                background-color: lightskyblue;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 7px;
+                border: none;
+                font-family: sans-serif;
+                font-size: 16px;
+            }
+
+            .title {
+                font-family: sans-serif ;
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .text {
+                font-family: sans-serif;
+                margin: 10px;
+                padding: 20px;
+            }
+            .main {
+                background-color: rgba(255, 255, 255, 0.5);
+                padding: 20px;
+            }
+
+            .list li {
+                font-family: sans-serif;
+                list-style-type: none;
+                margin: 15px 0;
+            }
+
+            .list a {
+                text-decoration: none;
+                background-color: lavender;
+                border-radius: 7px;
+                padding: 5px;
+            }
+
+            .name_form {
+                padding: 0 35px;
+            }
+
+            h2 {
+                padding: 20px;
+            }
+            .return {
+                text-decoration: none;
+                padding: 20px;
+                font-size: 20px;
+            }
+
+            .fail {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

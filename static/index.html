@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">This is map generator!</h1>
+    <p class="text">
+        To create a map, please input a twitter username!
+        You should also input your bearer token, in order to make it work!
+    </p>
+    <form method="POST" class="name_form">
+        <label for="name">Username:</label>
+        <input type="text" name="user_name" class="field" id="name">
+        <br>
+        <label for="token">Bearer token:</label>
+        <input type="text" name="token" class="field" id="token">
+        <br>
+        <input type="submit" class="button">
+    </form>
+
+        {% if maps is not none %}
+            <h2>Here are created maps!</h2>
+            <ul class="list">
+            {% for map in maps %}
+                <li>
+                    <a href="{{ url_for('static', filename=map) }}" target="blank">{{map}}</a>
+                    <a href="{{ url_for('remove_map', maps=map) }}" target="blank">Remove map</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif%}
+{% endblock %}
